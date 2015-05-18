@@ -1,22 +1,18 @@
-# Course_Project
-The course project  in GETTING AND CLEANING DATA course.
-#CREATES DESTINATION DIRECTORY AND DOWNLOAD THE DATASET if(!file.exists(“./courseprojectdata”)){dir.create(“./courseprojectdata”)} fileUrl <- “https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip” download.file(fileUrl,destfile=“./courseprojectdata/Dataset.zip”,method=“curl”)
+Getting and Cleaning Data: Course ProjectThe course project  in GETTING AND CLEANING DATA course.
 
-#UNZIPS THE DOWNLOADED FILE FROM THE COURSE PROJECT DATA DIRECTORY unzip(zipfile=“./courseprojectdata/Dataset.zip”,exdir=“./courseprojectdata”)
+#CREATES DESTINATION DIRECTORY AND DOWNLOAD THE DATASET 
+#UNZIPS THE DOWNLOADED FILE FROM THE COURSE PROJECT DATA DIRECTORY 
 
 #SETS THE WORKING DIRECTORY FOR CONVENIENCE setwd(“~/R_WORK”)
 
 ##################################################################################################################### ###########################I. Merges the training and the test sets to create one data set ######################## #####################################################################################################################
 
-#SETS THE GLOBAL FILE PATHS FOR EASE OF REFERENCE cp_path <- file.path(“./courseprojectdata” , “UCI HAR Dataset”) cp_files<-list.files(cp_path, recursive=TRUE)
+#SETS THE GLOBAL FILE PATHS FOR EASE OF REFERENCE 
 
-#READING THE ACTIVITY FILES FIRST FROM THE TEST AND TRAIN DATASETS Path_Activity_from_Test <- file.path(cp_path, “test” , “Y_test.txt” ) Activity_from_Test_data <- read.table(Path_Activity_from_Test,header = FALSE)
+#READING THE ACTIVITY FILES FIRST FROM THE TEST AND TRAIN DATASETS 
 
-Path_Activity_from_Train <- file.path(cp_path, “train” , “Y_train.txt” ) Activity_from_Train_data <- read.table(Path_Activity_from_Train,header = FALSE)
 
-#READING THE SUBJECT FILES FIRST FROM THE TEST AND TRAIN DATASETS Path_Subject_from_Test <- file.path(cp_path, “test” , “subject_test.txt” ) Subject_from_Test_data <- read.table(Path_Subject_from_Test,header = FALSE)
-
-Path_Subject_from_Train <- file.path(cp_path, “train” , “subject_train.txt” ) Subject_from_Train_data <- read.table(Path_Subject_from_Train,header = FALSE)
+#READING THE SUBJECT FILES FIRST FROM THE TEST AND TRAIN DATASETS 
 
 #READING THE FEATURES FILES FIRST FROM THE TEST AND TRAIN DATASETS Path_Features_from_Test <- file.path(cp_path, “test” , “x_test.txt” ) Features_from_Test_data <- read.table(Path_Features_from_Test,header = FALSE)
 
